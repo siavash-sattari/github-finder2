@@ -39,6 +39,9 @@ function User() {
     hireable
   } = user;
 
+  // NOTE: check for valid url to users website
+  const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog;
+
   if (loading) {
     return <Spinner />;
   }
@@ -47,7 +50,7 @@ function User() {
     <>
       <div className='w-full mx-auto lg:w-10/12'>
         <div className='mb-4'>
-          <Link to='/' className='btn btn-ghost'>
+          <Link to='/' className='btn btn-ghost font-semibold'>
             Back To Search
           </Link>
         </div>
@@ -80,7 +83,7 @@ function User() {
               </div>
             </div>
 
-            <div className='w-full rounded-lg shadow-md bg-base-100 stats'>
+            <div className='w-full rounded-lg border shadow-md bg-base-100 stats'>
               {location && (
                 <div className='stat'>
                   <div className='stat-title text-md'>Location</div>
@@ -91,8 +94,8 @@ function User() {
                 <div className='stat'>
                   <div className='stat-title text-md'>Website</div>
                   <div className='text-lg stat-value'>
-                    <a href={`https://${blog}`} target='_blank' rel='noreferrer'>
-                      {blog}
+                    <a href={websiteUrl} target='_blank' rel='noreferrer'>
+                      {websiteUrl}
                     </a>
                   </div>
                 </div>
@@ -111,7 +114,7 @@ function User() {
           </div>
         </div>
 
-        <div className='w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats'>
+        <div className='w-full py-5 mb-6 border rounded-lg shadow-md bg-base-100 stats'>
           <div className='stat'>
             <div className='stat-figure text-secondary'>
               <FaUsers className='text-3xl md:text-5xl' />

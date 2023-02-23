@@ -25,14 +25,14 @@ function UserSearch() {
   };
 
   return (
-    <div className='grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8'>
+    <div className='grid grid-cols-1 md:grid-cols-2 mb-8 gap-8'>
       <div>
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
             <div className='relative'>
               <input
                 type='text'
-                className='w-full pr-40 bg-gray-200 input input-lg text-black'
+                className='w-full pr-40 bg-gray-200 input input-lg text-black focus:outline-none'
                 placeholder='Search'
                 value={text}
                 onChange={handleChange}
@@ -46,7 +46,7 @@ function UserSearch() {
       </div>
       {users.length > 0 && (
         <div>
-          <button onClick={() => dispatch({ type: 'CLEAR_USERS' })} className='btn btn-ghost btn-lg'>
+          <button onClick={() => dispatch({ type: 'CLEAR_USERS' })} className='btn btn-outline btn-lg'>
             Clear
           </button>
         </div>
