@@ -19,7 +19,7 @@ const App = () => {
         <Router>
           <div className='flex flex-col justify-between h-screen'>
             <Navbar />
-            <main className='container mx-auto px-3 pb-28'>
+            <main className='container mx-auto px-3 pb-16 md:pb-28'>
               <Routes>
                 <Route
                   path='/'
