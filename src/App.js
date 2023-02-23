@@ -2,12 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { GithubProvider } from './context/GithubContext';
 import { AlertProvider } from './context/AlertContext';
 
+import Alert from './layout/Alert';
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
+import User from './pages/User';
 import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
-import Alert from './layout/Alert';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
+                <Route path='/user/:login' element={<User />} />
                 <Route path='*' element={<NotFound />} />
               </Routes>
             </main>
